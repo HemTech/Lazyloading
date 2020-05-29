@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>mono repo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="importmap-type" content="systemjs-importmap">
+  <base href="/">
+
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.15.1/dist/import-map-overrides.min.js"></script>
+  <script type="systemjs-importmap">
+    {
+        "imports": {
+          "header": "http://localhost:8065/main.js",
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.5/system/single-spa.min.js"
+        }
+      }
+    </script>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.5/system/single-spa.min.js"
+    as="script" crossorigin="anonymous" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.3.1/system.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.3.1/extras/amd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.3.1/extras/named-exports.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.3.1/extras/named-register.min.js"></script>
+  <link rel="stylesheet" id="global-theme-link" href="">
+
+<link rel="stylesheet" href="styles.0e4338761429b4eb16ac.css"></head>
+
+<body id="app-body" class="bgcolor">
+  <app-root></app-root>
+  <div id="main-body">
+    <!-- Header top navigation -->
+    <header id="app-header">
+    </header>
+    <!-- Main section with Navigation, main, bill board -->
+    <main id="main-container" class="p-grid p-nogutter">
+      <div id="app-content" class="p-col">
+        <div class="p-grid s-w-100 p-nogutter">
+          <div id="app-core" class="p-col-8 "></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- single spa code to register all the applications -->
+  <script>
+    System.import('single-spa').then(function (singleSpa) {
+      singleSpa.registerApplication(
+        'header',
+        () => System.import('header'),
+        location => true
+      );
+      singleSpa.start();
+    })
+
+  </script>
+
+<script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.5316de9ec8fd1f968423.js" nomodule defer></script><script src="polyfills-es2015.c182d5a77014353821b6.js" type="module"></script><script src="main-es2015.c066946afc1f5f935eb8.js" type="module"></script><script src="main-es5.c066946afc1f5f935eb8.js" nomodule defer></script></body>
+
+</html>
